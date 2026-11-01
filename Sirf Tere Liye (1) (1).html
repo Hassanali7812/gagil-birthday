@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sirf Tere Liye</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c8963e;--gold2:#e8b95a;--wine:#4a1e2e;--rose:#c2415d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:Poppins,system-ui,sans-serif;color:var(--wine);background:radial-gradient(circle at 10% 8%,#ffe9d2 0,transparent 45%),radial-gradient(circle at 92% 92%,#ffd9de 0,transparent 50%),linear-gradient(160deg,#fff9ef,#fff0e6 55%,#fdf1d8);overflow:hidden;-webkit-tap-highlight-color:transparent}
+.app{height:100%;display:grid;grid-template-columns:250px 1fr;position:relative;z-index:2}
+aside{padding:24px 14px;border-right:1px solid rgba(200,150,62,.45);background:#fff8ec;overflow:auto}
+.logo{font-family:'Great Vibes',cursive;font-size:38px;line-height:1.1;color:var(--gold);margin:0}
+.sub{font-size:13px;color:var(--rose);font-weight:600;margin:2px 0 18px}
+.ch{display:flex;gap:10px;align-items:center;padding:9px 11px;border-radius:14px;margin-bottom:4px;font-size:13.5px;cursor:pointer;opacity:.55;transition:.3s}
+.ch.done{opacity:.9}.ch.on{opacity:1;background:rgba(232,185,90,.28);box-shadow:0 0 0 1px rgba(200,150,62,.7)}
+.ch b{font-size:19px}.ch.lock{pointer-events:none;opacity:.3}
+main{display:flex;padding:24px;position:relative;overflow:auto}
+#slot{margin:auto;width:100%;max-width:640px;position:relative;z-index:3}
+#bar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#c8963e,#f2d27a,#c2415d);z-index:9;transition:width .6s}
+.side{position:absolute;width:56px;opacity:.9;animation:bob 3.4s ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 6px 8px rgba(120,20,40,.25))}
+.side.l1{left:3%;top:12%}.side.l2{left:7%;bottom:14%;width:40px;animation-delay:.8s}.side.r1{right:4%;top:15%;width:44px;animation-delay:.4s}.side.r2{right:7%;bottom:12%;animation-delay:1.2s}
+.coin{position:absolute;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b8,#e8b95a 45%,#a8761f);box-shadow:0 4px 8px rgba(120,80,10,.35),inset 0 0 0 3px rgba(255,255,255,.25);animation:bob 3s ease-in-out infinite;pointer-events:none}
+.coin.c1{left:12%;top:48%}.coin.c2{right:12%;top:52%;animation-delay:.7s}
+@keyframes bob{50%{transform:translateY(-14px) rotate(6deg)}}
+.panel{background:#fffdf8;border:1.5px solid rgba(200,150,62,.7);border-radius:30px;padding:36px 32px;text-align:center;box-shadow:0 24px 60px rgba(150,90,30,.22),inset 0 0 0 5px #fff;animation:pop .6s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+.hero{font-size:72px;line-height:1;margin-bottom:8px;display:inline-block;position:relative;filter:drop-shadow(0 6px 10px rgba(150,80,30,.3));animation:bob 2.8s ease-in-out infinite}
+.hero::before{content:"";position:absolute;inset:-12px;border-radius:50%;border:2px solid rgba(200,150,62,.5);animation:ring 2.4s infinite}
+@keyframes ring{from{transform:scale(.7);opacity:1}to{transform:scale(1.5);opacity:0}}
+h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:54px;line-height:1.1;margin:0 0 14px;background:linear-gradient(90deg,#a8761f,#e8b95a,#c2415d,#e8b95a,#a8761f);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes shine{to{background-position:250% 0}}
+.para{font-weight:400;font-size:16px;line-height:1.85;color:#3a1622;margin:0 auto 20px;max-width:520px}
+.btn{border:0;cursor:pointer;font:600 15px Poppins,sans-serif;color:#3a1a10;padding:14px 28px;border-radius:40px;background:linear-gradient(90deg,#e3b04b,#f6d58a);box-shadow:0 8px 22px rgba(200,150,62,.5);transition:.25s;animation:pulse 1.9s infinite}
+.btn:hover{transform:translateY(-3px) scale(1.04)}
+@keyframes pulse{50%{box-shadow:0 8px 34px rgba(200,150,62,.9)}}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 22px}
+.flip{aspect-ratio:1;perspective:600px;cursor:pointer}
+.flip>div{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.flip.open>div{transform:rotateY(180deg)}
+.flip span{position:absolute;inset:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;padding:8px;font-size:13px;line-height:1.35;font-weight:600}
+.flip .f{background:#fff;font-size:34px;border:1.5px solid rgba(200,150,62,.6)}
+.flip .b{background:linear-gradient(145deg,#e8b95a,#f2a3ae);color:#3a1a10;transform:rotateY(180deg)}
+.names{font-size:22px;margin:6px 0 14px;color:var(--rose);font-weight:600}
+.fall{position:fixed;top:-50px;pointer-events:none;z-index:1;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(360deg)}}
+.rise{position:fixed;bottom:-40px;pointer-events:none;z-index:8;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.dust{position:fixed;width:4px;height:4px;border-radius:50%;background:#e8b95a;animation:tw 3s infinite;z-index:0}
+@keyframes tw{50%{opacity:.15}}
+.spark{position:fixed;pointer-events:none;z-index:9;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle,#fff6c9,#e8b95a);animation:sp .8s forwards}
+@keyframes sp{to{transform:translateY(22px) scale(.2);opacity:0}}
+.catwrap{position:relative;height:84px;max-width:480px;margin:0 auto 14px;overflow:hidden}
+.cat{position:absolute;left:calc(50% - 60px);bottom:0;width:120px;cursor:pointer;animation:bob 2.4s ease-in-out infinite}
+.cat svg{width:100%;display:block}
+.cat .lg{animation:leg .3s infinite alternate;animation-play-state:paused;transform-origin:50% 0;transform-box:fill-box}
+.cat .lg.b{animation-direction:alternate-reverse}
+.cat.run .lg{animation-play-state:running}
+.cat.run{animation:away 1.5s ease-in forwards}
+@keyframes away{to{transform:translateX(440px)}}
+@keyframes leg{from{transform:rotate(-30deg)}to{transform:rotate(30deg)}}
+.cat.amb{position:fixed;left:-140px;bottom:8px;width:90px;z-index:4;pointer-events:none}
+.cat.run.amb{animation:cross 7s linear forwards}
+@keyframes cross{to{transform:translateX(calc(100vw + 280px))}}
+.big{font-size:84px}
+.script{font-family:'Great Vibes',cursive;font-size:42px;color:var(--gold);margin:4px 0}
+@media(max-width:760px){
+.app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+aside{display:flex;gap:6px;padding:10px;border:0;overflow-x:auto}.logo,.sub{display:none}
+.ch{white-space:nowrap;margin:0;padding:8px 12px}.ch span{display:none}
+.side,.coin{display:none}.panel{padding:26px 18px}h1{font-size:44px}.hero{font-size:58px}.big{font-size:66px}}
+</style>
+</head>
+<body>
+<div id="bar" style="width:0"></div>
+<div class="app">
+<aside id="nav"><div class="logo">Sirf Tere Liye</div><div class="sub">Love You Moti 💛</div></aside>
+<main>
+<div class="side l1" data-r></div><div class="side l2" data-r></div><div class="side r1" data-r></div><div class="side r2" data-r></div>
+<div class="coin c1"></div><div class="coin c2"></div>
+<div id="slot"></div>
+</main>
+</div>
+<script>
+var ROSE='<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#8e0f27"/><path d="M20 5c8 0 14 6 12 14-2 7-10 11-17 8-6-3-7-11-3-16 2-3 5-6 8-6z" fill="#c8102e"/><path d="M20 11c5 0 8 4 7 8-1 4-6 6-10 4-3-2-4-6-1-9 1-2 2-3 4-3z" fill="#a50d26"/><path d="M20 15c3 0 4 2 4 4s-3 4-5 3-2-4 0-6z" fill="#e0334f"/><circle cx="21" cy="20" r="2.2" fill="#6d0a1b"/></svg>';
+var CAT='<svg viewBox="0 0 120 70"><path d="M14 36C0 26 3 8 17 10" stroke="#e8801c" stroke-width="7" fill="none" stroke-linecap="round"/><rect class="lg" x="30" y="46" width="7" height="20" rx="3.5" fill="#d9740f"/><rect class="lg b" x="42" y="46" width="7" height="20" rx="3.5" fill="#d9740f"/><ellipse cx="52" cy="38" rx="33" ry="16" fill="#f08a24"/><path d="M38 24v11M50 22v13M62 24v11" stroke="#c4650f" stroke-width="3" stroke-linecap="round"/><rect class="lg b" x="62" y="46" width="7" height="20" rx="3.5" fill="#f08a24"/><rect class="lg" x="74" y="46" width="7" height="20" rx="3.5" fill="#f08a24"/><circle cx="90" cy="30" r="14" fill="#f08a24"/><path d="M80 20L82 5L92 16zM94 16L102 5L102 22z" fill="#f08a24"/><path d="M83 12L85 8L89 14zM96 12L99 8L99 17z" fill="#f4a0a8"/><circle cx="95" cy="28" r="2.6" fill="#222"/><circle cx="96" cy="27" r=".9" fill="#fff"/><circle cx="103" cy="33" r="2" fill="#e86b7a"/><path d="M100 36q3 3 6 0" stroke="#7a3a10" stroke-width="1.2" fill="none"/></svg>';
+var CH=[
+{i:"💌",n:"Hello",k:"text",t:"Hello, Winsome Girl",p:"Suna Moti, ki hal chal e? Yaad hai, sab se pehla message mene tujhe kiya tha, Hello winsome girl. Dil dhak dhak kar raha tha, pata nahi jawab aayega ya nahi. Aur tune jawab diya, Street Dog. Mein itna hasa yar, bata nahi sakta. Us din se baat shuru hui, aur mera dil wahin atka hua hai, aaj tak wapas nahi aaya."},
+{i:"🏫",n:"Class 1 Se",k:"text",t:"Class 1 Se Pagal",p:"Phir mene tujhe bata diya ke mein class 1 se tere peeche pagal hun. Socha tha chhupa ke rakhunga, par dil ne rehne nahi diya. Bachpan se mere liye ek taraf poori duniya thi aur ek taraf tu. Aaj bhi wohi haal hai, bas ab mein pehle se bhi zyada pagal hun."},
+{i:"📝",n:"Board Papers",k:"text",t:"Board Papers Ki Jhalak",p:"Board ke papers mein bhi mera dhyan paper mein kam aur tujhe dekhne mein zyada tha. Bas ek jhalak mil jaye, ek baar tu nazar aa jaye, mere liye itna hi kaafi tha. Paper kaisa gaya, mujhe yaad nahi, par tera chehra yaad hai. Tere ek chehre ko dekhne ke liye mein mar jata hun, mazaak nahi, sach hai Maa Saa."},
+{i:"⌚",n:"Do Ghadiyan",k:"text",t:"Do Ghadiyan",p:"Tune mujhe do ghadiyan gift ki thi. Do watches, par mere liye wo watches nahi, tere haath ka pyar thi. Jab bhi dekhta hun, waqt ke saath tu bhi yaad aa jati hai Moti. Waqt chalta rehta hai, par tera khayal mere dil mein ruka hua hai."},
+{i:"🌧️",n:"Do Saal",k:"text",t:"Wo Do Saal",p:"Hamari dosti itni achi thi ke shayad kisi ko nazar lag gayi. Do saal baad toot gayi, aur wo do saal mere liye bohat lambe the Maa Saa. Din guzarte rahe, cheezein badalti rahi, par ek cheez nahi badli, tere liye mera dil. Wo wahin raha jahan tu chhod ke gayi thi."},
+{i:"🌤️",n:"July",k:"text",t:"Phir July Aaya",p:"July mein tera message aaya. Mene wo message kitni baar padha, ginti yaad nahi. Baat ho sakti thi, aur phir hamari baatein dobara shuru ho gai. Us din mujhe laga ke meri dua qubool ho gai. Shukar Allah ka, aur shukar tera Moti, ke tu wapas aayi."},
+{i:"🌙",n:"Khwab",k:"text",t:"Tu Mere Khwabon Mein",p:"Tu mere khwabon mein aati thi. Din mein tujhe sochta tha, aur raat ko tu khwab mein aa jati thi. Agar tu khwabon mein na aati, to aaj ye sab kisi aur ko send kar raha hota, tiger hahaha."},
+{i:"🔔",n:"Ding Ding",k:"text",t:"Ding Ding",p:"Ding ding ka matlab pyar hai, aur mere liye tu mera ding ding hai. Ek baat sun Moti: mein tere upar khud se bhi zyada bharosa karta hun. Tu mera sab se bara bharosa hai, aur hamesha rahegi."},
+{i:"🤲",n:"Bharosa",k:"text",t:"Dhoka Na Dena",p:"Bas ek cheez mangta hun, aage ja ke dhoka na dena. Aur agar mein kuch na kar saka, to mujhe tanha na chhodna. Baaqi koshish meri poori, mein kabhi peeche nahi hatunga. Ye mera wada hai."},
+{i:"🌟",n:"Dua",k:"text",t:"Koshish Meri, Dua Teri",p:"Koshish poori meri, aur dua teri. Bas puri dua kiya kar, ke sab theek ho jaye, aur mera naam teri dua mein rahe. Mera naam aur tera naam, ek hi dua mein Maa Saa 😄"},
+{i:"🕊️",n:"Larai Na Ho",k:"text",t:"Larai Kabhi Na Ho",p:"Yar tu larai kabhi na ho, aur agar ho bhi jaye to chhodne wali baatein nahi karni. Wo to shukar hai ke tune kabhi aisi baat nahi ki, warna mene to pitt siyapa kar dena tha hahaha. Larna hai to pyar se lar, par chhodna nahi Moti."},
+{i:"🎒",n:"Yaad Hai",k:"text",t:"Yaad Hai Tujhe?",p:"Yaad hai mein Vera leke aaya tha, aur tune kese dour lagai thi? Hahaha. Aur Zunisha ka naam lo to tu copy sir pe maar deti thi, ye nahi yaad tujhe? Mujhe sab yaad hai, tera har chhota sa andaz."},
+{i:"🐈",n:"Meri Billi",k:"cat",t:"Billi Ban Ke Kyun Bhagti Hai",p:"Jab Hassan nazar aata hai to tu billi ban ke bhaag jati hai, pata nahi kyun hahaha. Billi par tap kar aur dekh.",p2:"Tu moti ho ya patli, badi ho ya chhoti, hamare gun aapas mein milte hain, samajh? Bas tu mere liye hai. Mene poora aage ka socha hua hai, tu bohat khush kismat hai, is liye zyada shoka nahi karna."},
+{i:"🤝",n:"Wada",k:"text",t:"Ek Wada",p:"Ek wada: teri har khwahish poori karunga, aur sirf mein karunga. Idhar udhar ke log laga rehte hain, mein unhein kisi cheez mein nahi leta. Tu bhi yahan kisi se zyada banna nahi, warna pyar wala mukka, samajh aayi? Hahaha."},
+{i:"✨",n:"Teri Pasand",k:"flip",t:"Gold, Turkey Aur Kebab",p:"Tujhe gold pasand hai, aur zindagi mein ek baar Turkey jana hai. Ek din wahan bhi chalenge. Aur khane mein tu expert hai: gola kabab, seekh kabab, aur chuwe ki raan bhi. Banane mein bhi aur khane mein bhi hahaha. Tap karke dekh.",I:["🪙","🇹🇷","🍢","🥩","🐀","😋"],R:["Gold, tera favourite","Turkey, ek din zaroor","Gola kabab","Seekh kabab","Chuwe ki raan, joke hai","Khane mein expert"]},
+{i:"📞",n:"Meri Demands",k:"flip",t:"Teri Chhoti Demands",p:"Mene jo jo chhoti demands ki, tasveer, call, voice note, aur wo big meetup, tune sab poori ki. Mujhe pata hai tune ye meri shiddat dekh ke ki, kyun ke tere liye meri shiddat bohat bari hai. Tap karke dekh.",I:["📸","📞","🎙️","🤝","💞","👀"],R:["Picture, meri har demand poori","Tera uni mein call karna","Voice note","Big meetup, sab se bara din","Sab poori ki","Meri shiddat bari hai"]},
+{i:"🎂",n:"Birthday",k:"cake",t:"Happy Birthday",p:"Dil mein ek wish kar, phir cake par tap kar. Ek aakhri cheez teri wait kar rahi hai."}
+];
+var cur=0,max=0,nav=document.getElementById("nav"),slot=document.getElementById("slot"),bar=document.getElementById("bar");
+document.querySelectorAll("[data-r]").forEach(function(e){e.innerHTML=ROSE});
+function drawNav(){nav.querySelectorAll(".ch").forEach(function(e){e.remove()});
+CH.forEach(function(c,k){var d=document.createElement("div");d.className="ch"+(k===cur?" on":"")+(k<max?" done":"")+(k>max?" lock":"");d.innerHTML="<b>"+c.i+"</b><span>"+c.n+"</span>";d.onclick=function(){go(k)};nav.appendChild(d)});bar.style.width=((cur+1)/CH.length*100)+"%"}
+function burst(n,roses){for(var k=0;k<n;k++){var h=document.createElement("div");h.className="rise";if(roses&&k%2===0){h.innerHTML=ROSE;h.style.width=(20+Math.random()*20)+"px"}else{h.textContent=["❤️","💛","✨"][k%3];h.style.fontSize=(18+Math.random()*24)+"px"}h.style.left=Math.random()*100+"vw";h.style.animationDuration=(3+Math.random()*3)+"s";document.body.appendChild(h);setTimeout(function(x){x.remove()},6500,h)}}
+function go(k){cur=k;if(k>max)max=k;drawNav();render()}
+function next(){burst(12,true);go(Math.min(cur+1,CH.length-1))}
+function song(){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;try{var ctx=new AC(),f={C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392,A4:440,Bb4:466.16,C5:523.25},q=[["C4",.35],["C4",.15],["D4",.5],["C4",.5],["F4",.5],["E4",1],["C4",.35],["C4",.15],["D4",.5],["C4",.5],["G4",.5],["F4",1],["C4",.35],["C4",.15],["C5",.5],["A4",.5],["F4",.5],["E4",.5],["D4",1],["Bb4",.35],["Bb4",.15],["A4",.5],["F4",.5],["G4",.5],["F4",1.2]],t=ctx.currentTime+.05;
+q.forEach(function(n){var o=ctx.createOscillator(),g=ctx.createGain();o.type="triangle";o.frequency.value=f[n[0]];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.25,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+n[1]*.95);o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+n[1]);t+=n[1]})}catch(e){}}
+function render(){
+var c=CH[cur],p=document.createElement("div");p.className="panel";
+var h='<div class="eyebrow">Chapter '+(cur+1)+' / '+CH.length+'</div>';
+if(c.k==="cake")h+='<div class="hero">🎂</div>';else if(c.k!=="flip"&&c.k!=="cat")h+='<div class="hero">'+c.i+'</div>';
+h+="<h1>"+c.t+'</h1><p class="para">'+c.p+"</p>";
+if(c.k==="cat")h+='<div class="catwrap"><div class="cat" id="cat">'+CAT+'</div></div><p class="para" id="p2" style="opacity:0;transition:opacity 1s">'+c.p2+"</p>";
+if(c.k==="flip"){h+='<div class="grid">'+c.R.map(function(r,j){return'<div class="flip"><div><span class="f">'+c.I[j]+'</span><span class="b">'+r+"</span></div></div>"}).join("")+"</div>"}
+h+='<button class="btn" id="nx">'+(c.k==="cake"?"Mombatti bujha 🎉":"Moti, is pe click kar hahaha 👆")+"</button>";
+p.innerHTML=h;slot.innerHTML="";slot.appendChild(p);
+p.querySelectorAll(".flip").forEach(function(f){f.onclick=function(){f.classList.add("open");burst(4,true)}});
+var ct=document.getElementById("cat");if(ct)ct.onclick=function(){ct.classList.add("run");setTimeout(function(){document.getElementById("p2").style.opacity=1},1100)};
+document.getElementById("nx").onclick=function(){
+if(c.k==="cake"){burst(70,true);song();
+p.innerHTML='<div class="eyebrow">Happy Birthday</div><div class="hero">👑</div><h1 class="big">Maa Saa</h1><div class="names">Mere Moti, Mere Gagil 💛</div><p class="para">Suna Moti, ki hal chal e? Yar Maa Saa ho tusi mere. Tu 22 ki ho gai, ek 2 tera aur ek 2 mera, yani 50 percent mere hain. Baaki nikah karke 100 poora kar lena hahaha. Dassa tenu Moti, mere Moti, mere Gagil.</p><div class="script">Shehzil</div><div class="names" style="margin-top:0">Love You Moti</div><p style="font-family:\'Great Vibes\',cursive;font-size:34px;margin:0 0 14px;color:#c2415d">Tera Hassan</p><button class="btn" id="again">🎵 Gaana dobara suno</button>';
+document.getElementById("again").onclick=song;
+setTimeout(function(){burst(40,true)},1200)}
+else next()}}
+for(var s=0;s<50;s++){var e=document.createElement("div");e.className="dust";e.style.left=Math.random()*100+"vw";e.style.top=Math.random()*100+"vh";e.style.animationDelay=Math.random()*3+"s";document.body.appendChild(e)}
+setInterval(function(){var f=document.createElement("div");f.className="fall";f.innerHTML=ROSE;f.style.width=(16+Math.random()*20)+"px";f.style.left=Math.random()*100+"vw";f.style.animationDuration=(7+Math.random()*5)+"s";document.body.appendChild(f);setTimeout(function(){f.remove()},12500)},800);
+setInterval(function(){var a=document.createElement("div");a.className="cat run amb";a.innerHTML=CAT;document.body.appendChild(a);setTimeout(function(){a.remove()},7200)},30000);
+var lastS=0;document.addEventListener("pointermove",function(ev){var n=Date.now();if(n-lastS<70)return;lastS=n;var s=document.createElement("div");s.className="spark";s.style.left=ev.clientX+"px";s.style.top=ev.clientY+"px";document.body.appendChild(s);setTimeout(function(){s.remove()},800)});
+drawNav();render();
+</script>
+</body>
+</html>
